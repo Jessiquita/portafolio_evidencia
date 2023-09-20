@@ -1,0 +1,92 @@
+Codigo de Holamundo:
+
+#!bin/bash
+
+
+echo -e "Este script dice:"
+echo -e "\nHola Mundo"
+
+
+Codigo de HolaNombre:
+
+#!bin/bash
+
+NOMBRE=""
+
+echo -n "Ingresa tu nombre: "
+read NOMBRE
+
+echo -e "Este script dice: "
+echo -e "\nHola ${NOMBRE}"
+
+
+Codigo de Arbol de directorios:
+
+#!bin/bash
+
+mkdir ArbolDirectorios
+mkdir ArbolDirectorios/dos
+mkdir ArbolDirectorios/seis
+mkdir ArbolDirectorios/tres
+mkdir ArbolDirectorios/tres/cuatro
+mkdir ArbolDirectorios/tres/cuatro/cinco
+ touch ArbolDirectorios/seis/holamundo.sh
+ touch ArbolDirectorios/seis/Holanombre.sh
+touch ArbolDirectorios/tres/file3.txt
+mkdir ArbolDirectorios/uno
+touch ArbolDirectorios/uno/test.txt
+bash ArbolDrirectorios/seis/holamundo.sh
+bash ArbolDirectorios/seis/Holanombre.sh
+
+
+Codigo de Menu:
+
+
+
+#!bin/bash
+
+SCRIPT=""
+
+while true
+do
+         echo -e "
+███    ███ ███████ ███    ██ ██    ██
+████  ████ ██      ████   ██ ██    ██
+██ ████ ██ █████   ██ ██  ██ ██    ██
+██  ██  ██ ██      ██  ██ ██ ██    ██
+██      ██ ███████ ██   ████  ██████
+"
+    echo -e "\n 1.- Arbol de directorios"
+          echo -e "2.- Hola Mundo"
+          echo -e "3.- Saludo usando variables"
+          echo -e "x.- SALIR\n\n"
+
+          echo -n "Selecciona un script: "
+          read SCRIPT
+
+          case ${SCRIPT} in
+              1)
+                  bash arbol-directorios.sh
+                  ;;
+        2)
+            bash holamundo.sh
+            echo -e "\nPresione cualquier tecla para continuar..."
+            read -n 1 -s -r
+            clear
+            ;;
+        3)
+            bash Holanombre.sh
+            echo -e "\nPresione cualquier tecla para continuar..."
+            read -n 1 -s -r
+            clear
+            ;;
+        x)
+            break
+            ;;
+        *)
+            echo -e "\n Esa opcion no existe, ingrese una valida."
+            echo -e "\nPresione cualquier tecla para continuar..."
+            read -n 1 -s -r
+            clear
+    esac
+done
